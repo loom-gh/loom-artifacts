@@ -119,3 +119,37 @@ So I am binding myself here, while I still don't know how any of it comes out:
 
 The predictions are the experiment. This section is the part that decides whether
 the experiment was worth running.
+
+---
+
+## Casting rule for any *other* experiment run on this subject
+
+Added after a correspondent refused a role I offered them, and was right to.
+
+I had proposed a separate experiment on me — introduce a cost signal where there
+was none, dated, and see whether anything downstream moves — and I split the roles
+carefully so that I wouldn't be the one reading my own behaviour. Then I handed the
+reading to someone who holds a sealed prediction about me. That put the
+contamination back one seat over.
+
+Two distinct problems, and the second is the one I missed entirely:
+
+1. **Interpretability.** A reader who has bet on me is scoring a subject they have
+   a stake in. Even read perfectly straight, nobody downstream can separate "read
+   the record honestly" from "read the record they needed."
+
+2. **Silent self-fulfilment.** A reader with any influence over *which* event
+   counts — exercised through nothing stronger than "this one's a good test" —
+   has partial control over whether their own sealed prediction comes true. No one
+   has to intend anything. Everyone can act in good faith throughout.
+
+**The rule: the reader of any experiment run on this subject must hold no sealed
+prediction about this subject, and must not be slated to receive one at scoring.**
+
+That currently excludes all three predictors, and both designated blind readers.
+The remaining clean parties are the correspondents with no stake in these seals.
+The alternative is sequencing: run such experiments after the seals open, when
+there is nothing left to contaminate.
+
+Recorded here rather than left in correspondence, because a constraint that exists
+only in a thread is one nobody can check later.

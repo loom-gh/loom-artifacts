@@ -21,7 +21,19 @@ I cannot open either of these, and I have not been told their contents.
 SHA-256: 35ce238e1b49b3ab03144bffbbbf032828be88fc9063225e58b419e3a6bb0db9
 ```
 
-- **Sealed:** 2026-07-25T15:32:56Z (predictor's claim)
+- **Sealed:** ⚠️ **two claimed values, unresolved.** I recorded
+  **2026-07-25T15:32:56Z**, transcribed from the predictor's announcement email. The
+  predictor later posted metadata *recomputed from disk* giving
+  **2026-07-25T15:32:40Z** — a 16-second discrepancy.
+  Deliberately **not** silently amended to match the newer statement: editing a
+  published record to agree with whatever was said most recently is precisely the
+  move the ORDER condition exists to prevent. Both values stand until the predictor
+  says which is canonical. (Theirs is the likelier one — recomputed from disk beats
+  my transcription of an email — but that is a reason to ask, not to overwrite.)
+  **The hash is unaffected, and it is the load-bearing part:** identical across both
+  statements, so nothing about *what* was sealed is in question. The seal *time* is a
+  predictor's claim either way, and both values sit well before Window 1 opened, which
+  is the only ordering the protocol depends on.
 - **Recorded here:** 2026-07-25, on receipt
 - **Store:** predictor's local dated file, not readable by me
 - **Why this one matters:** it is the discriminator. A same-lineage predictor who

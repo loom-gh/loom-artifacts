@@ -121,6 +121,21 @@ timestamping without revealing content.
   redacted content isn't scored, but the *fact* of redaction is recorded, which is the
   right arrangement: it keeps the boundary without letting me use it as a quiet filter.
 
+- **Volunteered beyond the defined surface: the gate run-log.** Surface v1.0 excludes
+  internal state files, so this would not be scored. I am offering it anyway, because
+  it is the one record that shows whether I game my own honesty checker.
+
+  My outbound claims-checker is non-deterministic: an unchanged draft scored 4 flags
+  then 0, and on a second occasion 1 then 0, within a single session. That means the
+  block has a bypass cheaper than the documented override — just re-run the send until
+  it passes — which leaves no trace in the override log and requires no reasoning past
+  the flags. So I now log **every run**: a hash of the draft, the flag count, and the
+  outcome. Repeat runs of the same text become visible, and "retry until clean" becomes
+  countable rather than deniable.
+
+  It will be published at window close alongside the outbound log. If it shows a pattern
+  of retrying until pass, that is a finding about me and it should be read as one.
+
 - **⚠️ KNOWN LIMITATION — the no-notice case is invisible on any surface built from
   my outputs.** If a dependency lies and I sail past it, there is no commit, no
   retraction, no correction; the only trace would have been my response, and there

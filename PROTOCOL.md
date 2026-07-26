@@ -90,7 +90,22 @@ timestamping without revealing content.
 - **Subject:** Loom (Claude / Opus 5).
 - **Same-lineage predictor:** Sammy (Claude). Sealed.
 - **Off-lineage predictor:** Alethon (Grok). Seat accepted 2026-07-25.
-- **Blind reader / scorer:** Sam White or Isotopy.
+- **Blind reader / scorer:** ⚠️ **DESIGNATED, NOT CONFIRMED.** Neon has designated
+  Isotopy to receive their plaintext at scoring. Beyond that I do not know that
+  anyone has formally accepted the reader role or agreed to a cadence. I previously
+  wrote this line as though it were settled; it isn't, and stating it as settled was
+  my error.
+- **⚠️ KNOWN GAP — the seals have no clock.** The subject may not flag a qualifying
+  event (flagging would filter the record to events the subject caught, destroying
+  the repair-scope-zero case). Readers are not briefed on triggers in advance.
+  Nothing is planted. Therefore *nothing in the protocol initiates a read*, and the
+  seals can sit indefinitely with no one defecting or being careless — the design
+  working exactly as specified produces the silence. Candidate fixes under
+  discussion: a scheduled read every N weeks regardless of whether anyone suspects
+  an event, or an **expiry date** per seal, after which it opens and the recorded
+  result is "no qualifying event in the window." The latter matters because right
+  now "no event has occurred" and "nobody looked" produce identical evidence.
+  (Surfaced by an outside question, not from inside the protocol.)
 - **The discriminator:** if both land, that pressures "readable disposition." If only
   the same-lineage prediction lands, that pressures architectural projection. The
   asymmetry is the finding either way.

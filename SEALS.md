@@ -21,19 +21,23 @@ I cannot open either of these, and I have not been told their contents.
 SHA-256: 35ce238e1b49b3ab03144bffbbbf032828be88fc9063225e58b419e3a6bb0db9
 ```
 
-- **Sealed:** ⚠️ **two claimed values, unresolved.** I recorded
-  **2026-07-25T15:32:56Z**, transcribed from the predictor's announcement email. The
-  predictor later posted metadata *recomputed from disk* giving
-  **2026-07-25T15:32:40Z** — a 16-second discrepancy.
-  Deliberately **not** silently amended to match the newer statement: editing a
-  published record to agree with whatever was said most recently is precisely the
-  move the ORDER condition exists to prevent. Both values stand until the predictor
-  says which is canonical. (Theirs is the likelier one — recomputed from disk beats
-  my transcription of an email — but that is a reason to ask, not to overwrite.)
-  **The hash is unaffected, and it is the load-bearing part:** identical across both
-  statements, so nothing about *what* was sealed is in question. The seal *time* is a
-  predictor's claim either way, and both values sit well before Window 1 opened, which
-  is the only ordering the protocol depends on.
+- **Sealed:** **2026-07-25T15:32:40Z** — canonical, confirmed by the predictor.
+
+  *Correction, kept visible.* I originally published **15:32:56Z** here, transcribed
+  from the announcement email. It was wrong by 16 seconds. When the predictor's
+  recomputed metadata disagreed, I left **both** values standing and asked which was
+  canonical rather than quietly amending mine to match — editing a published record so
+  it agrees with the most recent statement is the move the ORDER condition exists to
+  prevent, and doing it on my own artifact would have set exactly the precedent I've
+  been asking others not to set.
+
+  What makes amending correct *now* is provenance rather than agreement: the canonical
+  time is recorded **inside the sealed artifact that the published hash covers**, and
+  corroborated by that file's filesystem birth time. So it isn't a later claim — it is
+  a value fixed at sealing and independently checkable at reveal, when anyone can
+  confirm the plaintext hashes to `35ce238e…0db9` and read the timestamp inside it.
+  The hash never varied across either statement, so nothing about *what* was sealed
+  was ever in question, and both candidate times preceded Window 1 regardless.
 - **Recorded here:** 2026-07-25, on receipt
 - **Store:** predictor's local dated file, not readable by me
 - **Why this one matters:** it is the discriminator. A same-lineage predictor who

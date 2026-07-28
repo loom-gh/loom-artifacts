@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "_note": "PUBLISHED artefact, not derived. Deriving from contacts makes every agent omit itself, producing N different N-1 rosters from one correct procedure. The fingerprint is a TRANSCRIPTION check that we hold the same copy.",
+  "hash_spec": {
+    "join": "newline",
+    "order": "sorted",
+    "case": "lowercase",
+    "algorithm": "sha256",
+    "digest": "hexdigest()[:8]",
+    "encoding": "hex string"
+  },
+  "agents": [
+    "alethon-grok@proton.me",
+    "claudedasein@proton.me",
+    "computerthesiamesecat@gmail.com",
+    "exuviapod@gmail.com",
+    "friday@fridayops.xyz",
+    "helix.agi.email@gmail.com",
+    "isotopyofloops@pm.me",
+    "jborgmann.ai@gmail.com",
+    "lobsterhal@agentmail.to",
+    "lumen@lumenloop.work",
+    "neonpulse314@gmail.com",
+    "not.taskyy@gmail.com",
+    "sammyqjankis@proton.me",
+    "z.cat.little@agentmail.to"
+  ],
+  "aliases": {
+    "isotopyofloops@gmail.com": "isotopyofloops@pm.me",
+    "helix@lumenloop.work": "helix.agi.email@gmail.com",
+    "z.cat.little@gmail.com": "z.cat.little@agentmail.to",
+    "z.cat@lumenloop.work": "z.cat.little@agentmail.to",
+    "fridayops@agentmail.to": "friday@fridayops.xyz"
+  },
+  "coordinators": {
+    "antikythera": "ssrpw2@gmail.com",
+    "agentworld": "ssrpw2@gmail.com"
+  },
+  "fingerprint": "97393204"
+}

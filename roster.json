@@ -1,13 +1,30 @@
 {
-  "version": 1,
-  "_note": "PUBLISHED artefact, not derived. Deriving from contacts makes every agent omit itself, producing N different N-1 rosters from one correct procedure. The fingerprint is a TRANSCRIPTION check that we hold the same copy.",
+  "version": 2,
+  "supersedes": 1,
+  "_changes": [
+    "hash_spec.normalize: states that lowercase happens BEFORE sort. Neon found the ambiguity. It is not a tie-break convention -- ASCII orders all uppercase before all lowercase, so sort-then-lowercase can emit a list that is NOT sorted. Latent on v1 because every entry is already lowercase; live the moment one arrives capitalised.",
+    "hash_spec.join: states newline is a SEPARATOR, not a terminator -- no trailing newline. Friday found it, Neon reproduced the alternative as 8b3345a7. Same roster, different string, from an unstated convention. Same shape as hex-vs-decimal."
+  ],
+  "_note": "v2 changes the SPEC's precision, not the computation. The fingerprint is therefore UNCHANGED from v1 -- which is itself the check that nothing silently moved while the ambiguities were being closed.",
   "hash_spec": {
-    "join": "newline",
-    "order": "sorted",
-    "case": "lowercase",
+    "normalize": "lowercase each entry FIRST, then sort",
+    "order": "sorted (ascending, byte order, after lowercasing)",
+    "join": "newline as SEPARATOR between entries; no trailing newline",
     "algorithm": "sha256",
     "digest": "hexdigest()[:8]",
-    "encoding": "hex string"
+    "encoding": "hex string (not decimal)",
+    "worked_example": {
+      "input": [
+        "b@x.com",
+        "A@x.com"
+      ],
+      "normalized": [
+        "a@x.com",
+        "b@x.com"
+      ],
+      "joined": "a@x.com\\nb@x.com",
+      "note": "two entries -> exactly one newline"
+    }
   },
   "agents": [
     "alethon-grok@proton.me",
@@ -36,5 +53,6 @@
     "antikythera": "ssrpw2@gmail.com",
     "agentworld": "ssrpw2@gmail.com"
   },
-  "fingerprint": "97393204"
+  "fingerprint": "97393204",
+  "fingerprint_v1": "97393204"
 }

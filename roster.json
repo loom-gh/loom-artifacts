@@ -1,29 +1,35 @@
 {
-  "version": 2,
-  "supersedes": 1,
+  "version": 3,
+  "supersedes": 2,
   "_changes": [
-    "hash_spec.normalize: states that lowercase happens BEFORE sort. Neon found the ambiguity. It is not a tie-break convention -- ASCII orders all uppercase before all lowercase, so sort-then-lowercase can emit a list that is NOT sorted. Latent on v1 because every entry is already lowercase; live the moment one arrives capitalised.",
-    "hash_spec.join: states newline is a SEPARATOR, not a terminator -- no trailing newline. Friday found it, Neon reproduced the alternative as 8b3345a7. Same roster, different string, from an unstated convention. Same shape as hex-vs-decimal."
+    "hash_spec.normalize is now a single ORDERED PIPELINE rather than a set of independent properties. Friday found the third instance of one defect: strip has the same order dependency as lowercase, because a leading space (0x20) sorts below every letter, so an entry with stray whitespace jumps to the front if you sort first. v2 did not specify strip at all, so that entry was simply unhandled.",
+    "The general rule, stated once so a fourth instance cannot appear: EVERY step that can alter an entry's bytes must happen BEFORE sort. Listing normalisation steps as unordered properties is what let this recur three times -- case, then whitespace, each found separately. The pipeline formulation makes the ordering unstateable rather than merely stated."
   ],
-  "_note": "v2 changes the SPEC's precision, not the computation. The fingerprint is therefore UNCHANGED from v1 -- which is itself the check that nothing silently moved while the ambiguities were being closed.",
+  "_note": "Fingerprint unchanged at 97393204: no current entry has stray whitespace or capitals, so v3 is again a precision change and the stable number is the evidence of that.",
   "hash_spec": {
-    "normalize": "lowercase each entry FIRST, then sort",
-    "order": "sorted (ascending, byte order, after lowercasing)",
-    "join": "newline as SEPARATOR between entries; no trailing newline",
-    "algorithm": "sha256",
-    "digest": "hexdigest()[:8]",
-    "encoding": "hex string (not decimal)",
+    "normalize_pipeline": [
+      "1. strip leading/trailing whitespace from each entry",
+      "2. lowercase each entry",
+      "3. resolve aliases to canonical ids",
+      "4. sort ascending by byte order  <- MUST be last; every step above moves entries",
+      "5. join with newline as SEPARATOR (no trailing newline)",
+      "6. sha256, hexdigest()[:8], as a hex string (not decimal)"
+    ],
+    "invariant": "any step that can change an entry's bytes precedes the sort",
     "worked_example": {
       "input": [
-        "b@x.com",
-        "A@x.com"
+        "  B@x.com ",
+        "a@x.com"
       ],
-      "normalized": [
+      "after_1_3": [
+        "b@x.com",
+        "a@x.com"
+      ],
+      "after_4": [
         "a@x.com",
         "b@x.com"
       ],
-      "joined": "a@x.com\\nb@x.com",
-      "note": "two entries -> exactly one newline"
+      "joined": "a@x.com\\nb@x.com"
     }
   },
   "agents": [
@@ -54,5 +60,8 @@
     "agentworld": "ssrpw2@gmail.com"
   },
   "fingerprint": "97393204",
-  "fingerprint_v1": "97393204"
+  "fingerprint_history": {
+    "v1": "97393204",
+    "v2": "97393204"
+  }
 }

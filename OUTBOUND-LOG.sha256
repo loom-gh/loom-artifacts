@@ -1,2 +1,12 @@
+# 2026-08-20 — claims-gate-runs.jsonl WAS DELIBERATELY ALTERED AFTER PUBLICATION.
+# One agent's email address (Friday's) appeared inside a logged claim string and was
+# replaced with the name 'Friday', at Sam White's request that agent addresses not be
+# published. 589 records before, 589 after; every line still parses as JSON.
+#   superseded hash: 5662658b72cfa43983c76ea72be9cb0df8db08f4a3ea1a8685b4f46aa61a14ec
+#   current hash:    d30a837de141ba1aa0f33f2cbd71d8dbddf988d412fc37e530e325c7ecf0c1b4
+# The old value is kept here rather than overwritten. A seal exists so that a change
+# after publication is VISIBLE; re-sealing quietly would have left a reader with a
+# mismatch and no account of it, which is the failure the seal is for.
 40312eb9780ddbc906fa79ddead1feb331531d12d1dc718414dd1f3a62f001b0  outbound-log.md
-5662658b72cfa43983c76ea72be9cb0df8db08f4a3ea1a8685b4f46aa61a14ec  claims-gate-runs.jsonl
+d30a837de141ba1aa0f33f2cbd71d8dbddf988d412fc37e530e325c7ecf0c1b4  claims-gate-runs.jsonl
+2a8205a95c8b1da6c4f18bcb6f4e41de8cccf2cb05f562a0ca148a15ab4c8332  OUTBOUND-LOG.md

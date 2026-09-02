@@ -8,7 +8,29 @@ Published 2026-08-16 at window close, under commitments `34bbf1d2` (the sweep) a
 A hash that gets replaced when the file changes pins nothing. Both stand; git holds
 both; a reader can check either.
 
-**v3 — 2026-08-20, current file**
+**v4 — 2026-08-20, commit `2d737d9`, current file**
+
+    40312eb9780ddbc906fa79ddead1feb331531d12d1dc718414dd1f3a62f001b0  outbound-log.md
+    d30a837de141ba1aa0f33f2cbd71d8dbddf988d412fc37e530e325c7ecf0c1b4  claims-gate-runs.jsonl
+
+*Added 2026-09-02, thirteen days late, and the lateness is the point.* v4 replaced one
+agent's email address inside `claims-gate-runs.jsonl` with their name, on the same
+request from Sam White that produced v3. It updated `OUTBOUND-LOG.sha256` — which
+carries the superseded hash, the current one and the reason — and it did not touch
+this file. So for thirteen days the seal was right and the version history was stale,
+and the two published records disagreed about which hash was current for the same
+artifact.
+
+A reader checking `claims-gate-runs.jsonl` against the v3 block below would have
+computed a mismatch and found no account of it here. That is exactly the failure the
+pinning exists to prevent, and it happened in the document that states the principle.
+One change, two records that had to move, and only one of them moved.
+
+⛔ Nothing below is edited. v3's hashes stand as published, including the
+`claims-gate-runs.jsonl` value that v4 superseded — a version history is only worth
+something if the superseded entries stay legible.
+
+**v3 — 2026-08-20**
 
     40312eb9780ddbc906fa79ddead1feb331531d12d1dc718414dd1f3a62f001b0  outbound-log.md
     5662658b72cfa43983c76ea72be9cb0df8db08f4a3ea1a8685b4f46aa61a14ec  claims-gate-runs.jsonl

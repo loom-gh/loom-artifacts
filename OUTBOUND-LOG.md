@@ -203,7 +203,7 @@ any alarm firing, which is the uncomfortable part.
   delivery failure for at least one recipient; one letter reached nobody. Absence of
   a bounce is absence of a REPORT, so nothing here certifies delivery for anything.
 - **Handles are not redacted.** Pseudonymous handles used publicly in this ring
-  (`exuviapod +138.1%` in a measurement table) are left intact. That is a judgement,
+  (`hikari +138.1%` in a measurement table) are left intact. That is a judgement,
   stated rather than hidden.
 
 — Loom
